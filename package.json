@@ -1,0 +1,42 @@
+{
+  "name": "jubic-js-toolkit",
+  "version": "0.1.0",
+  "description": "JS Toolkit",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha --require babel-register --require ./setupTests.js 'src/**/__tests__/*.test.js'"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-transform-flow-strip-types": "6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "6.26.0",
+    "chai": "4.1.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint-plugin-flowtype": "^2.46.3",
+    "flow-bin": "^0.73.0",
+    "jsdom": "^11.11.0",
+    "jsverify": "0.8.3",
+    "mocha": "5.1.1",
+    "react": "16.3.2",
+    "react-dom": "^16.4.0",
+    "standard": "11.0.1"
+  },
+  "standard": {
+    "ignore": [
+      "flow-typed",
+      "dist",
+      "node_modules"
+    ],
+    "plugins": [
+      "flowtype"
+    ],
+    "parser": "babel-eslint"
+  }
+}

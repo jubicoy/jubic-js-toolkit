@@ -1,0 +1,11 @@
+[ignore]
+
+[include]
+src/.*
+
+[libs]
+flow-typed
+
+[options]
+suppress_type=$FlowIssue
+suppress_comment= \\(.\\|\n\\)*\\$FlowIgnore
