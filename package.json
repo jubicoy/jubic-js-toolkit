@@ -2,9 +2,13 @@
   "name": "jubic-js-toolkit",
   "version": "0.1.0",
   "description": "JS Toolkit",
-  "main": "dist/index.js",
   "scripts": {
-    "test": "mocha --require babel-register --require ./setupTests.js 'src/**/__tests__/*.test.js'"
+    "watch-test": "mocha --watch --require babel-register --require ./setupTests.js 'src/**/__tests__/*.test.js'",
+    "prepack": "npm run prepack:clean && npm run prepack:babel && npm run prepack:flow",
+    "prepack:babel": "babel src --out-dir lib --ignore *__tests__*",
+    "prepack:clean": "rm -rf lib",
+    "prepack:flow": "cd src && find . -name \"*.js\" -not -path \"*__tests__*\" -exec cp {} ../lib/{}.flow \\; && cd ..",
+    "test": "standard && flow && mocha --require babel-register --require ./setupTests.js 'src/**/__tests__/*.test.js'"
   },
   "author": "",
   "license": "MIT",
@@ -26,6 +30,7 @@
     "mocha": "5.1.1",
     "react": "16.3.2",
     "react-dom": "^16.4.0",
+    "redux": "^4.0.0",
     "standard": "11.0.1"
   },
   "standard": {
