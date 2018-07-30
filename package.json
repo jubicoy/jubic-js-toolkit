@@ -1,6 +1,6 @@
 {
   "name": "jubic-js-toolkit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "JS Toolkit",
   "scripts": {
     "watch-test": "mocha --watch --require babel-register --require ./setupTests.js 'src/**/__tests__/*.test.js'",
