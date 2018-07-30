@@ -51,13 +51,14 @@ class Inject<Context, ChildProps, Injected> extends React.PureComponent<InjectPr
     return (
       <ContainerContext.Consumer>
         {
-          (context) => (
-            <ChildComponent
-              {...this.props.mapContextToProps(
-                // $FlowIgnore
-                context
-              )} />
-          )
+          (context) => {
+            if (!context) return null
+
+            return (
+              <ChildComponent
+                {...this.props.mapContextToProps(((context: any): Context))} />
+            )
+          }
         }
       </ContainerContext.Consumer>
     )
