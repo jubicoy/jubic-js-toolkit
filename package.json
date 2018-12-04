@@ -1,6 +1,6 @@
 {
   "name": "jubic-js-toolkit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "JS Toolkit",
   "scripts": {
     "watch-test": "mocha --watch --require babel-register --require ./setupTests.js 'src/**/__tests__/*.test.js'",
@@ -22,8 +22,8 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "6.26.0",
     "chai": "4.1.2",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
     "eslint-plugin-flowtype": "^2.46.3",
     "flow-bin": "^0.73.0",
     "jsdom": "^11.11.0",

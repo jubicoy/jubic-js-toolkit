@@ -48,6 +48,11 @@ type InjectProps<Context, ChildProps, Injected>
 class Inject<Context, ChildProps, Injected> extends React.PureComponent<InjectProps<Context, ChildProps, Injected>> {
   render () {
     const ChildComponent = this.props.component
+    const forwardedProps = {
+      ...this.props
+    }
+    delete forwardedProps.component
+
     return (
       <ContainerContext.Consumer>
         {
@@ -56,7 +61,10 @@ class Inject<Context, ChildProps, Injected> extends React.PureComponent<InjectPr
 
             return (
               <ChildComponent
-                {...this.props.mapContextToProps(((context: any): Context))} />
+                {...{
+                  ...forwardedProps,
+                  ...this.props.mapContextToProps(((context: any): Context))
+                }} />
             )
           }
         }

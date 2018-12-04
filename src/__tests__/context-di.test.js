@@ -13,7 +13,7 @@ import {
 } from '../context-di'
 
 describe('context-di', () => {
-  xit('injects', () => {
+  it('injects', () => {
     type TestProps = {
       dependency: (string) => Node,
       ownProp: string
